@@ -39,9 +39,11 @@ List * createList() {
     return list;
 }
 
-void * firstList(List * list) {
+void * firstList(List * list) 
+{
+    if (!list || !list->head) return NULL;
     list->current = list->head;
-    if(list->current != NULL) return list->current->data; 
+    return list->current->data;
 }
 
 void * nextList(List * list) {
