@@ -118,14 +118,17 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
     if (list->current == list->head)
     {
+        if (list->current == NULL) return NULL;
         list->current->next->prev = NULL;
     }
     else if(list->current == list->tail)
     {
+        if (list->current == NULL) return NULL;
         list->current->prev->next = NULL;
     }
     else
     {
+        if(list->current == NULL) return NULL;
         list->current->prev->next = list->current->next;
         list->current->next->prev = list->current->prev;
     }
